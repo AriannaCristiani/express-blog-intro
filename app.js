@@ -33,7 +33,6 @@ const posts = [
         immagine: 'images/torta_paesana.jpeg',
         tags: ['torta', 'dolci', 'tradizione'],
     }
-
 ]
 
 app.use(express.static('public'))
@@ -44,7 +43,17 @@ app.get('/', (req, res) => {
 })
 
 app.get('/bacheca', (req, res) => {
-    res.json(posts)
+    
+    let postNumber = 0
+
+    for (let i = 0 ; i < posts.length ; i++){
+        postNumber = i + 1;
+    }
+
+    res.json({
+        postList: posts,
+        posts: postNumber,
+        })
     
 })
 
