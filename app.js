@@ -41,6 +41,10 @@ app.get('/', (req, res) => {
 
 })
 
+app.get('/bacheca', (req, res) => {
+    res.json(posts)
+})
+
 app.listen(port, () => {
     console.log(`il server è in ascolto sulla porta: ${port}`)
 })
